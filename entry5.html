@@ -16,27 +16,62 @@
     }
     a{
         color: rgb(221, 123, 90);
-        display: block; /* Make it a block-level element */
+        display: block; 
         font-size: 1.2em;
-        margin: 20px auto; /* Center it with margin and add space above */
-        max-width: 200px; /* Optional: limit the width */
+        margin: 20px auto; 
+        max-width: 200px;
     }
-    /* New style for the poem */
   .poem {
-      color: white; /* Set the text color to white */
+      color: white;
   }
    </style>
   </head>
   <body>
     <div class="container">
    <h1>Time Capsule 5</h1>
-   <img src="images/2.jpg" width="300" height="300">
-   <img src="images/3.JPG" width="300" height="300">
-   <img src="images/4.JPG" width="300" height="300">
-   <img src="images/5.JPG" width="300" height="300">
-   <img src="images/6.JPG" width="300" height="300">
-   <img src="images/7.JPG" width="300" height="300">
-   <img src="images/8.JPG" width="300" height="300">
+
+   <picture>
+    <source srcset="images/2.jpg" media="(max-width: 600px)">
+    <source srcset="images/2.jpg" media="(max-width: 1200px)">
+    <img src="images/2.JPG" width="300" height="300" alt="Image 2">
+  </picture>
+  
+  <picture>
+    <source srcset="images/3.jpg" media="(max-width: 600px)">
+    <source srcset="images/3.jpg" media="(max-width: 1200px)">
+    <img src="images/3.JPG" width="300" height="300" alt="Image 3">
+  </picture>
+
+  <picture>
+    <source srcset="images/4.jpg" media="(max-width: 600px)">
+    <source srcset="images/4.jpg" media="(max-width: 1200px)">
+    <img src="images/4.JPG" width="300" height="300" alt="Image 4">
+  </picture>
+
+  <picture>
+    <source srcset="images/5.jpg" media="(max-width: 600px)">
+    <source srcset="images/5.jpg" media="(max-width: 1200px)">
+    <img src="images/5.JPG" width="300" height="300" alt="Image 5">
+  </picture>
+
+  <picture>
+    <source srcset="images/6.jpg" media="(max-width: 600px)">
+    <source srcset="images/6.jpg" media="(max-width: 1200px)">
+    <img src="images/6.JPG" width="300" height="300" alt="Image 6">
+  </picture>
+
+  <picture>
+    <source srcset="images/7.jpg" media="(max-width: 600px)">
+    <source srcset="images/7.jpg" media="(max-width: 1200px)">
+    <img src="images/7.JPG" width="300" height="300" alt="Image 7">
+  </picture>
+
+   <picture>
+    <source srcset="images/8.jpg" media="(max-width: 600px)">
+    <source srcset="images/8.jpg" media="(max-width: 1200px)">
+    <img src="images/8.JPG" width="300" height="300" alt="Image 8">
+  </picture>
+
 </div>
 
 <div class="poem">
