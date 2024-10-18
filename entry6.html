@@ -24,9 +24,13 @@
     }
     img {
         transition: transform 0.1s ease;
+        margin: 20px;
       }
-      img:hover {
+    img:hover {
         transform: scale(1.1);
+      }
+    img:not(:hover) {
+        opacity: 0.5; /* Fade out images that are not being hovered over */
       }
    </style>
   </head>
