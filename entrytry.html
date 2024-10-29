@@ -17,25 +17,30 @@
     }
     a{
         color: rgb(221, 123, 90);
-        display: block; /* Make it a block-level element */
+        display: block; 
         font-size: 1.2em;
-        margin: 20px auto; /* Center it with margin and add space above */
-        max-width: 200px; /* Optional: limit the width */
+        margin: 20px auto; 
+        max-width: 200px; 
     }
-    img {
-        transition: transform 0.05s ease;
-        margin: 20px;
-      }
-    img:hover {
-        transform: scale(1.1);
-      }
-    img:not(:hover) {
-        opacity: 0.5;
-      }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            margin: 20px;
+            width: 450px;
+            height: 300px;
+        }
+        img.invisible {
+            visibility: hidden;
+        }
    </style>
   </head>
   <body>
-   <h1>Time Capsule 7</h1>
+   <h1>Time Capsule 8</h1>
 
    <picture>
     <source srcset="images/81-600.jpg" media="(max-width: 600px)">
@@ -92,5 +97,38 @@
   </picture>
 
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   
+   <script>
+    function showImage(image) {
+        image.style.visibility = 'visible';
+        image.style.opacity = 1;
+    }
+
+    function hideImage(image) {
+        image.style.opacity = 0;
+        setTimeout(() => {
+            image.style.visibility = 'hidden';
+        }, 1000); 
+    }
+
+    function displayRandomImage() {
+        const images = document.querySelectorAll('img');
+        const randomImageIndex = Math.floor(Math.random() * images.length);
+        const selectedImage = images[randomImageIndex];
+
+        showImage(selectedImage);
+
+        // After 1 seconds, hide the image
+        setTimeout(() => {
+            hideImage(selectedImage);
+            setTimeout(displayRandomImage, 0); 
+        }, 1500); 
+    }
+
+    window.onload = function() {
+        displayRandomImage();
+    };
+</script>
+
   </body>
 </html>
