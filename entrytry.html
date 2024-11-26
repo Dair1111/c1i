@@ -81,20 +81,21 @@
              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
      </iframe>
    </div>
+
    <script>
      function toggleSpotifyPlayer() {
        const player = document.getElementById("spotifyPlayer");
        const iframe = document.getElementById("spotifyIframe");
-       const autoplayUrl = "https://open.spotify.com/embed/track/7fnekQpjsCjCZNzndYURlk?autoplay=1&utm_source=generator";
-   
+       const autoplayUrl = "https://open.spotify.com/embed/track/7fnekQpjsCjCZNzndYURlk?utm_source=generator";
+
        if (player.style.display === "none") {
          player.style.display = "block"; 
          iframe.src = autoplayUrl; 
        } else {
          player.style.display = "none"; 
          iframe.src = "";
-        }  
+       }  
      }
    </script>
-  </body>
+ </body>
 </html>
