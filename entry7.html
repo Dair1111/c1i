@@ -32,6 +32,32 @@
     img:not(:hover) {
         opacity: 0.7;
       }
+      .poem {
+      color: white;
+  }
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
    </style>
   </head>
   <body>
@@ -90,7 +116,67 @@
     <source srcset="images/79-1200.jpg" media="(max-width: 1200px)">
     <img src="images/79-600w.jpg" width="450" height="300" alt="Image 79">
   </picture>
-
+  <div>
+    <div class="poem">
+      <h2>A Tale Begun</h2>
+<p>Wisława Szymborska</p>
+<p>
+  The world is never ready<br>
+  for the birth of a child.<br>
+  Our ships are not yet back from wineless voyages.<br>
+  Our swords are not yet forged<br>
+  for fresh injustices.<br>
+  Our cities are not yet built<br>
+  for new deportations.<br>
+  We still lack songs,<br>
+  to drown out the shrieks.<br>
+</p>
+<p>
+  The child was already born,<br>
+  it's just that they had no time to find a place for hope,<br>
+  that they postponed happiness.<br>
+  They had no room, and that room was taken<br>
+  for pain.<br>
+</p>
+<p>
+  When the child is born,<br>
+  the family says a prayer to time,<br>
+  beseeches patience.<br>
+</p>
+<p>
+  They whisper to the tree outside the window,<br>
+  "Grow with him, tree."<br>
+</p>
+<p>
+  The child cries and cries<br>
+  and the wind blows.<br>
+</p>
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   <button onclick="toggleSpotifyPlayer()">Play Song</button>
+   <div id="spotifyPlayer" style="display: none;">
+     <iframe id="spotifyIframe" 
+             style="border-radius:12px" 
+             src="https://open.spotify.com/embed/track/45PxuJqJBnPXZKLxoo9Apj?utm_source=generator" 
+             width="300" height="80" 
+             frameborder="0" 
+             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+     </iframe>
+   </div>
+
+   <script>
+     function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/45PxuJqJBnPXZKLxoo9Apj?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+   </script>
   </body>
 </html>
+
