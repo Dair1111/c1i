@@ -33,6 +33,9 @@
     img:not(:hover) {
         opacity: 0.7;
       }
+      .poem {
+      color: white;
+  }
       button {
         position: absolute; 
         top: 45px; 
@@ -69,13 +72,58 @@
    <img src="images/47.JPG" width="450" height="300">
    <img src="images/48.JPG" width="450" height="300">
    <img src="images/49.JPG" width="450" height="300">
-   <a href="https://dair1111.github.io/c1i/">Back to home page</a>
-
+  
+   <div>
+    <div class="poem">
+      <h2>PSALM</h2>
+      <p>Wisława Szymborska</p>
+      <p>
+        Oh, the leaky boundaries of man-made states!<br>
+        How many clouds float past them with impunity,<br>
+        how much desert sand sifts through,<br>
+        how many mountain pebbles tumble<br>
+        onto foreign ground in provocative leaps!
+      </p>
+      <p>
+        Need I mention every single bird that flies in the face of frontiers<br>
+        or alights on the roadblock at the border?<br>
+        A humble robin – still, its tail resides abroad<br>
+        while its beak stays home.<br>
+        If that weren’t enough, it won’t stop bobbing!
+      </p>
+      <p>
+        Among innumerable insects, I’ll single out only the ant<br>
+        between the border guard’s left and right boots,<br>
+        blithely ignoring the questions “Where from?” and “Where to?”
+      </p>
+      <p>
+        Oh, to register in detail, at a glance, the chaos<br>
+        prevailing on every continent!
+      </p>
+      <p>
+        Isn’t that a privet on the far bank<br>
+        smuggling its hundred-thousandth leaf<br>
+        across the river?<br>
+        And who but the octopus, with impudent long arms,<br>
+        would violate the sacred bounds of territorial waters?
+      </p>
+      <p>
+        And how can we talk of order overall<br>
+        when the very placement of the stars<br>
+        leaves out Southern Cross entirely?
+      </p>
+      <p>
+        And as if that weren’t enough, the rain disintegrates,<br>
+        the snow falls flake by flake,<br>
+        and within every flake’s trembling boundaries,<br>
+        there is no consensus.
+      </p>
+      <a href="https://dair1111.github.io/c1i/">Back to home page</a>
    <button onclick="toggleSpotifyPlayer()">Play Song</button>
    <div id="spotifyPlayer" style="display: none;">
      <iframe id="spotifyIframe" 
              style="border-radius:12px" 
-             src="https://open.spotify.com/embed/track/7fnekQpjsCjCZNzndYURlk?utm_source=generator" 
+             src="https://open.spotify.com/embed/track/5sD6oTCae0LI9lztYBJA0W?utm_source=generator"  
              width="300" height="80" 
              frameborder="0" 
              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
@@ -86,7 +134,7 @@
      function toggleSpotifyPlayer() {
        const player = document.getElementById("spotifyPlayer");
        const iframe = document.getElementById("spotifyIframe");
-       const autoplayUrl = "https://open.spotify.com/embed/track/7fnekQpjsCjCZNzndYURlk?utm_source=generator";
+       const autoplayUrl = "https://open.spotify.com/embed/track/5sD6oTCae0LI9lztYBJA0W?utm_source=generator";
 
        if (player.style.display === "none") {
          player.style.display = "block"; 
