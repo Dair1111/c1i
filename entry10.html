@@ -32,6 +32,32 @@
     img:not(:hover) {
         opacity: 0.7; 
       }
+      .poem {
+      color: white;
+  }
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
    </style>
   </head>
   <body>
@@ -45,6 +71,93 @@
    <img src="images/66.JPG" width="450" height="300">
    <img src="images/69.JPG" width="450" height="300">
    <img src="images/64.JPG" width="450" height="300">
+   <div>
+    <div class="poem">
+      <h2>THE SILENCE OF PLANTS</h2>
+      <p>Wisława Szymborska</p>
+      <p>
+        A one-sided relationship is developing quite well between you and me.<br>
+        I know what a leaf, petal, kernel, cone, and stem are,<br>
+        and I know what happens to you in April and December.<br>
+      </p>
+      <p>
+        Though my curiosity is unrequited,<br>
+        I gladly stoop for some of you,<br>
+        and for others I crane my neck.<br>
+      </p>
+      <p>
+        I have names for you:<br>
+        maple, burdock, liverwort,<br>
+        eather, juniper, mistletoe, and forget-me-not;<br>
+        but you have none for me.<br>
+      </p>
+      <p>
+        After all, we share a common journey.<br>
+        When traveling together, it's normal to talk,<br>
+        exchanging remarks, say, about the weather,<br>
+        or about the stations flashing past.<br>
+      </p>
+      <p>
+        We wouldn't run out of topics<br>
+        for so much connects us.<br>
+        The same star keeps us in reach.<br>
+        We cast shadows according to the same laws.<br>
+        Both of us at least try to know something,<br>
+        each in our own way,<br>
+        and even in what we don't know<br>
+        there lies a resemblance.<br>
+      </p>
+      <p>
+        Just ask and I will explain as best I can:<br>
+        what it is to see through my eyes,<br>
+        why my heart beats,<br>
+        and how come my body is unrooted.<br>
+      </p>
+      <p>
+        But how does someone answer questions<br>
+        which have never been posed,<br>
+        and when, on top of that<br>
+        the one who would answer<br>
+        is such an utter nobody to you?<br>
+      </p>
+      <p>
+        Undergrowth, shrubbery,<br>
+        meadows, and rushes…<br>
+        everything I say to you is a monologue,<br>
+        and it is not you who's listening.<br>
+      </p>
+      <p>
+        A conversation with you is necessary<br>
+        and impossible,<br>
+        urgent in a hurried life<br>
+        and postponed for never.<br>
+      </p>
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   <button onclick="toggleSpotifyPlayer()">Play Song</button>
+   <div id="spotifyPlayer" style="display: none;">
+     <iframe id="spotifyIframe" 
+             style="border-radius:12px" 
+             src="https://open.spotify.com/embed/track/4mVsLqaJtptz3QBzbuTiCS?utm_source=generator" 
+             width="300" height="80" 
+             frameborder="0" 
+             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+     </iframe>
+   </div>
+
+   <script>
+     function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/4mVsLqaJtptz3QBzbuTiCS?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+   </script>
   </body>
 </html>
+
