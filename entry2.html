@@ -32,6 +32,31 @@
     img:not(:hover) {
         opacity: 0.7;
       }
+      
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
+
    </style>
   </head>
   <body>
@@ -46,7 +71,41 @@
     <img src="images/97.JPG" width="450" height="300">
     <img src="images/98.JPG" width="450" height="300">
     <img src="images/99.JPG" width="450" height="300">
+    <div style="max-width: 700px; margin: 30px auto; text-align: left; font-size: 1em; line-height: 1.6; color: white;">
+      <p>The eighty-first edition of the Whitney Biennial—the longest-running survey of contemporary art in the United States—features seventy-one artists and collectives grappling with many of today’s most pressing issues. This Biennial is like being inside a “dissonant chorus," as participating artist Ligia Lewis described it, a provocative yet intimate experience of distinct and disparate voices that collectively probe the cracks and fissures of the unfolding moment.</p>
 
+      <p>The exhibition’s subtitle, <em>Even Better Than the Real Thing</em>, acknowledges that Artificial Intelligence (AI) is complicating our understanding of what is real, and rhetoric around gender and authenticity is being used politically and legally to perpetuate transphobia and restrict bodily autonomy. These developments are part of a long history of deeming people of marginalized race, gender, and ability as subhuman—less than real. In making this exhibition, we committed to amplifying the voices of artists who are confronting these legacies, and to providing a space where difficult ideas can be engaged and considered.</p>
+
+      <p>This Biennial is a gathering of artists who explore the permeability of the relationships between mind and body, the fluidity of identity, and the growing precariousness of the natural and constructed worlds around us. Whether through subversive humor, expressive abstraction, or non-Western forms of cosmological thinking, to name but a few of their methods, these artists demonstrate that there are pathways to be found, strategies of coping and healing to be discovered, and ways to come together even in a fractured time.</p>
+
+      <p>The 2024 Whitney Biennial is organized by Chrissie Iles, Anne and Joel Ehrenkranz Curator and Meg Onli, Curator at Large, with Min Sun Jeon and Beatriz Cifuentes. The performance program is organized by Iles and Onli, with guest curator Taja Cheek. The film program is organized by Iles and Onli, with guest curators Korakrit Arunanondchai, asinnajaq, Greg de Cuir Jr, and Zackary Drucker.</p>
+  </div>
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   <button onclick="toggleSpotifyPlayer()">Play Song</button>
+   <div id="spotifyPlayer" style="display: none;">
+     <iframe id="spotifyIframe" 
+             style="border-radius:12px" 
+             src="https://open.spotify.com/embed/track/2zFtWKtWOi8YDukPOmjV7m?utm_source=generator" 
+             width="300" height="80" 
+             frameborder="0" 
+             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+     </iframe>
+   </div>
+
+   <script>
+     function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/2zFtWKtWOi8YDukPOmjV7m?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+   </script>
   </body>
 </html>
+
