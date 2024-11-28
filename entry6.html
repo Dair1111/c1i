@@ -32,6 +32,32 @@
     img:not(:hover) {
         opacity: 0.7;
       }
+      h2{
+     text-align: center;
+    }
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
    </style>
   </head>
   <body>
@@ -46,7 +72,45 @@
     <img src="images/107.JPG" width="450" height="300">
     <img src="images/108.JPG" width="450" height="300">
     <img src="images/109.JPG" width="450" height="300">
-
+    <div style="max-width: 600px; margin: 30px auto; text-align: left; font-size: 1em; line-height: 1.6; color: white;">
+      <h2>ABOUT</h2>
+      <p>The Art Gallery of South Australia (AGSA) is a cornerstone of Adelaide’s cultural landscape, situated along North Terrace, a boulevard of historic institutions. Located on the traditional lands of the Kaurna people, in the area known as Tarntanya (‘red kangaroo place’), AGSA reflects both its deep roots and its ongoing evolution as a leading art institution.</p>
+    
+      <p>Founded in 1881, the Gallery initially occupied two modest rooms in Adelaide’s nineteenth-century library and museum complex before moving to a dedicated building in 1900. This relocation was made possible by a significant £25,000 bequest from Sir Thomas Elder, a pastoralist whose generosity laid the foundation for AGSA’s growing collection. That original building now houses the Elder Wing of Australian Art, a centerpiece of the Gallery.</p>
+    
+      <p>Over time, numerous benefactors have contributed to the expansion of AGSA’s collection and infrastructure. In 1916, a major bequest from Sir Samuel Way significantly enriched its Asian decorative arts holdings. In 1935, a £10,000 gift from Alexander Melrose supported the creation of the Melrose Wing and the neoclassical façade that greets visitors today. Subsequent additions in 1962, 1979, and 1996 have expanded the Gallery’s exhibition space to accommodate a collection that now includes over 47,000 works, with nearly 90 percent acquired through private benefaction.</p>
+    
+      <p>The collection reflects AGSA’s broad and evolving focus. Originally centered on European and Australian male artists, it now encompasses an exceptional range of Asian art, contributions from Australia’s remarkable women modernists, an impressive collection of Islamic art, and internationally significant works. Highlights include the largest collection of Morris & Co. decorative art outside Britain, the finest collection of Auguste Rodin sculptures in the southern hemisphere, and a rare ‘topographic’ sculpture by Donald Judd, created in 1974 specifically for AGSA’s north lawn.</p>
+    
+      <p>AGSA’s commitment to Aboriginal and Torres Strait Islander art began in 1939 when it became the first state gallery to acquire a work by an Aboriginal artist. Since the mid-1950s, this dedication has grown, culminating in the establishment of the Tarnanthi festival in 2015, which celebrates contemporary Aboriginal and Torres Strait Islander art on an international scale.</p>
+  
+      <p>With a history shaped by generosity and vision, the Art Gallery of South Australia stands as a vital institution, continually evolving to reflect the diverse and dynamic cultural narratives of the past, present, and future.</p>
+    </div>
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   <button onclick="toggleSpotifyPlayer()">Play Song</button>
+   <div id="spotifyPlayer" style="display: none;">
+     <iframe id="spotifyIframe" 
+             style="border-radius:12px" 
+             src="https://open.spotify.com/embed/track/440kFFDjhM8FKIPNP23kC7?utm_source=generator"
+             width="300" height="80" 
+             frameborder="0" 
+             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+     </iframe>
+   </div>
+
+   <script>
+     function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/440kFFDjhM8FKIPNP23kC7?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+   </script>
   </body>
 </html>
