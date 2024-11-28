@@ -32,6 +32,32 @@
     img:not(:hover) {
         opacity: 0.7;
       }
+      h2{
+     text-align: center;
+    }
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
    </style>
   </head>
   <body>
@@ -45,6 +71,36 @@
    <img src="images/DSCF2350.JPG" width="450" height="300">
    <img src="images/DSCF2395.JPG" width="450" height="300">
    <img src="images/DSCF2432.JPG" width="450" height="300">
+   <div style="max-width: 700px; margin: 30px auto; text-align: left; font-size: 1em; line-height: 1.6; color: white;">
+    <h2>ABOUT</h2>
+    <p>The Isabella Stewart Gardner Museum, constructed between 1900-1902 under the strict guidance of its daring namesake, illustrates Gardner’s intense interest in contemporary European and ancient art, and it is an excellent example of an early 20th-century house museum as well. In 1902, Gardner moved the beginnings of her collection into the four-story Italian palazzo style building. Unpretentious from the outside, the inside overlooked magnificent gardens and a skylighted central courtyard. Over the years, Gardner filled the halls and courtyard with carefully collected and arranged works of art and ancient treasures.</p>
+    <p>When she had arrived in 1860 in Boston’s established and patrician Brahman society, Gardner found the atmosphere less than accepting of her colorful, New York City-bred personality. At first dismayed and saddened by her position, Gardner overcame her feelings and soon became, with her lavish parties and spirited discussions, one of Boston society's premier hostesses; she also became a patron of the Boston Symphony. During the 1890s, Gardner began collecting works of art from around the world and planning her grand museum. Until her death in 1924, Gardner traveled throughout Europe and Asia meticulously collecting art to add to her collection. In her will, Gardner bequeathed the museum to the city of Boston as a public institution. There was one condition, however: the collection had to be maintained precisely as Gardner had arranged it--nothing could be added, removed or rearranged. The museum and its collection, both monuments to personal taste, remain unique to this day.</p>
+</div>
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   <button onclick="toggleSpotifyPlayer()">Play Song</button>
+   <div id="spotifyPlayer" style="display: none;">
+     <iframe id="spotifyIframe" 
+             style="border-radius:12px" 
+             src="https://open.spotify.com/embed/track/4zDN80lRSYsptSXu8J1DpA?utm_source=generator"
+             width="300" height="80" 
+             frameborder="0" 
+             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+     </iframe>
+   </div>
+
+   <script>
+     function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/4zDN80lRSYsptSXu8J1DpA?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+   </script>
   </body>
 </html>
