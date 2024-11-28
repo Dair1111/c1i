@@ -32,6 +32,32 @@
     img:not(:hover) {
         opacity: 0.7;
       }
+      .poem {
+      color: white;
+  }
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
    </style>
   </head>
   <body>
@@ -90,7 +116,87 @@
     <source srcset="images/89-1200.jpg" media="(max-width: 1200px)">
     <img src="images/89-600W.jpg" width="450" height="300" alt="Image 89">
   </picture>
+  <div>
+    <div class="poem">
+      <h2>VIEW WITH A GRAIN OF SAND</h2>
+      <p>Wisława Szymborska</p>
+      <p>
+        We call it a grain of sand,<br>
+        but it calls itself neither grain nor sand.<br>
+        It does just fine, without a name,<br>
+        whether general, particular,<br>
+        permanent, passing,<br>
+        incorrect, or apt.<br>
+      </p>
+      <p>
+      Our glance, our touch mean nothing to it.<br>
+      It doesn't feel itself seen and touched.<br>
+      And that it fell on the windowsill<br>
+      is only our experience, not its.<br>
+      For it, it is no different from falling on anything else<br>
+      with no assurance that it has finished falling<br>
+      or that it is falling still.<br>
+    </p>
+    <p>
+    The window has a wonderful view of a lake,<br>
+    but the view doesn't view itself.<br>
+    It exists in this world<br>
+    colorless, shapeless,<br>
+    soundless, odorless, and painless.<br>
+  </p>
+  <p>
+  The lake's floor exists floorlessly,<br>
+  and its shore exists shorelessly.<br>
+  Its water feels itself neither wet nor dry<br>
+  and its waves to themselves are neither singular nor plural.<br>
+  They splash deaf to their own noise<br>
+  on pebbles neither large nor small.<br>
+</p>
+<p>
+And all this beneath a sky by nature skyless<br>
+in which the sun sets without setting at all<br>
+and hides without hiding behind an unminding cloud.<br>
+The wind ruffles it, its only reason being<br>
+that it blows.<br>
+</p>
+<p>
+A second passes.<br>
+A second second.<br>
+A third.<br>
+But they're three seconds only for us.<br>
+</p>
+<p>
+Time has passed like a courier with urgent news.<br>
+But that's just our simile.<br>
+The character is invented, his haste is make-believe,<br>
+his news inhuman.<br>
+</p>
 
    <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+   <button onclick="toggleSpotifyPlayer()">Play Song</button>
+   <div id="spotifyPlayer" style="display: none;">
+     <iframe id="spotifyIframe" 
+             style="border-radius:12px" 
+             src="https://open.spotify.com/embed/track/0DTNHKDgZyQCriredcWVuq?utm_source=generator"
+             width="300" height="80" 
+             frameborder="0" 
+             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+     </iframe>
+   </div>
+
+   <script>
+     function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/0DTNHKDgZyQCriredcWVuq?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+   </script>
   </body>
 </html>
