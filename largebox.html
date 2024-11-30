@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <title>Harmonic Collection 10</title>
+   <style>
+    @import 
+    url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap');
+    body{
+        font-family: 'Cormorant Garamond', serif;
+        text-align: center;
+        background-color: #211f19b3;
+    }
+    h1{
+     text-align: center;
+     font-size: 3em;
+     color: #abf7ffb1;
+    }
+    a{
+        color: rgb(221, 123, 90);
+        display: block; 
+        font-size: 1.2em;
+        margin: 20px auto; 
+        max-width: 200px; 
+    }
+    img {
+        transition: transform 0.1s ease;
+        margin: 20px;
+      }
+    img:hover {
+        transform: scale(1.1);
+      }
+    img:not(:hover) {
+        opacity: 0.7; 
+      }
+      .poem {
+      color: white;
+  }
+      button {
+        position: absolute; 
+        top: 45px; 
+        right: 40px; 
+        background-color: #abf7ffb1;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      button:hover {
+        background-color: #80e6ff;
+      }
+      #spotifyPlayer {
+        position: fixed;  
+        top: 20px;        
+        right: 20px;      
+        display: none;
+      }
+      
+      #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #abf7ffb1; /* Full white background */
+      z-index: 999; /* Ensures it covers everything */
+    }
+
+    #modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 0px; /*sharp corners*/
+      z-index: 1000;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+      #modalImage {
+        max-width: 100%; /* Ensures the image doesn't overflow the modal's width */
+         max-height: 70vh; /* Ensures the image height fits within the viewport height */
+         object-fit: contain; /* Makes sure the entire image fits without cropping */
+         display: block; /* Centers the image if it's smaller */
+         margin: 0 auto; /* Centers the image horizontally */
+         transition: none; /* No hover animation */
+         transform: none; /* No scaling */
+         opacity: 1; /* Full visibility */
+        }
+    
+
+         #imageDescription {
+      color: #211f19b3;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+   </style>
+  </head>
+  <body>
+   <h1>Qiaxi Forest Park</h1>
+   
+   <picture>
+    <source srcset="images/91-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/91-1200.jpg" media="(max-width: 1200px)">
+  <img src="images/91-600.jpg" width="450" height="300" alt="Image 91" onclick="openModal('images/91-1200.jpg', 'Description of Image 91')" />
+</picture>
+
+  <picture>
+    <source srcset="images/62-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/62-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/62-600.jpg" width="450" height="300" alt="Image 62">
+  </picture>
+
+  <picture>
+    <source srcset="images/63-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/63-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/63-600.jpg" width="450" height="300" alt="Image 63">
+  </picture>
+
+  <picture>
+    <source srcset="images/64-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/64-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/64-600.jpg" width="450" height="300" alt="Image 64">
+  </picture>
+
+  <picture>
+    <source srcset="images/65-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/65-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/65-600.jpg" width="450" height="300" alt="Image 65">
+  </picture>
+
+  <picture>
+    <source srcset="images/66-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/66-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/66-600.jpg" width="450" height="300" alt="Image 66">
+  </picture>
+
+  <picture>
+    <source srcset="images/67-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/67-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/67-600.jpg" width="450" height="300" alt="Image 67">
+  </picture>
+
+  <picture>
+    <source srcset="images/68-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/68-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/68-600.jpg" width="450" height="300" alt="Image 68">
+  </picture>
+
+  <picture>
+    <source srcset="images/69-600.jpg" media="(max-width: 600px)">
+    <source srcset="images/69-1200.jpg" media="(max-width: 1200px)">
+    <img src="images/69-600.jpg" width="450" height="300" alt="Image 69">
+  </picture>
+  
+   <div>
+    <div class="poem">
+      <h2>THE SILENCE OF PLANTS</h2>
+      <p>Wisława Szymborska</p>
+      <p>
+        A one-sided relationship is developing quite well between you and me.<br>
+        I know what a leaf, petal, kernel, cone, and stem are,<br>
+        and I know what happens to you in April and December.<br>
+      </p>
+      <p>
+        Though my curiosity is unrequited,<br>
+        I gladly stoop for some of you,<br>
+        and for others I crane my neck.<br>
+      </p>
+      <p>
+        I have names for you:<br>
+        maple, burdock, liverwort,<br>
+        eather, juniper, mistletoe, and forget-me-not;<br>
+        but you have none for me.<br>
+      </p>
+      <p>
+        After all, we share a common journey.<br>
+        When traveling together, it's normal to talk,<br>
+        exchanging remarks, say, about the weather,<br>
+        or about the stations flashing past.<br>
+      </p>
+      <p>
+        We wouldn't run out of topics<br>
+        for so much connects us.<br>
+        The same star keeps us in reach.<br>
+        We cast shadows according to the same laws.<br>
+        Both of us at least try to know something,<br>
+        each in our own way,<br>
+        and even in what we don't know<br>
+        there lies a resemblance.<br>
+      </p>
+      <p>
+        Just ask and I will explain as best I can:<br>
+        what it is to see through my eyes,<br>
+        why my heart beats,<br>
+        and how come my body is unrooted.<br>
+      </p>
+      <p>
+        But how does someone answer questions<br>
+        which have never been posed,<br>
+        and when, on top of that<br>
+        the one who would answer<br>
+        is such an utter nobody to you?<br>
+      </p>
+      <p>
+        Undergrowth, shrubbery,<br>
+        meadows, and rushes…<br>
+        everything I say to you is a monologue,<br>
+        and it is not you who's listening.<br>
+      </p>
+      <p>
+        A conversation with you is necessary<br>
+        and impossible,<br>
+        urgent in a hurried life<br>
+        and postponed for never.<br>
+      </p>
+      
+      <a href="https://dair1111.github.io/c1i/">Back to home page</a>
+      <button onclick="toggleSpotifyPlayer()">Play Song</button>
+      <div id="spotifyPlayer" style="display: none;">
+        <iframe id="spotifyIframe" 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/4zDN80lRSYsptSXu8J1DpA?utm_source=generator"
+                width="300" height="80" 
+                frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+        </iframe>
+      </div>
+      
+<div id="modalOverlay">
+    <div id="modal">
+      <img id="modalImage" />
+      <p id="imageDescription"></p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    
+    function toggleSpotifyPlayer() {
+       const player = document.getElementById("spotifyPlayer");
+       const iframe = document.getElementById("spotifyIframe");
+       const autoplayUrl = "https://open.spotify.com/embed/track/4mVsLqaJtptz3QBzbuTiCS?utm_source=generator";
+       if (player.style.display === "none") {
+         player.style.display = "block"; 
+         iframe.src = autoplayUrl; 
+       } else {
+         player.style.display = "none"; 
+         iframe.src = "";
+       }  
+     }
+
+    function openModal(src, desc) {
+      // Set modal content
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageDescription').innerText = desc;
+
+      // Show modal and overlay
+      document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    function closeModal() {
+      // Hide modal and overlay
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
