@@ -58,63 +58,102 @@
         right: 20px;      
         display: none;
       }
+
+      #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #abf7ffb1; 
+      z-index: 999; 
+    }
+
+    #modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 0px; 
+      z-index: 1000;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+      #modalImage {
+        max-width: 100%; 
+         max-height: 70vh; 
+         object-fit: contain; 
+         display: block; 
+         margin: 0 auto; 
+         transition: none; 
+         transform: none; 
+         opacity: 1; 
+        }
+    
+         #imageDescription {
+      color: #211f19b3;
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
    </style>
   </head>
   <body>
    <h1>Kalajun Grassland</h1>
 
    <picture>
-    <source srcset="images/71-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/71-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/71-600w.jpg" width="450" height="300" alt="Image 71">
+    <source srcset="images/71-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/71-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/71-600w.jpg" width="450" height="300" alt="Image 71" onclick="openModal('images/71-1200w.jpg', 'Jul 7, 2024 18:53')" />
   </picture>
 
   <picture>
-    <source srcset="images/72-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/72-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/72-600w.jpg" width="450" height="300" alt="Image 72">
+    <source srcset="images/72-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/72-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/72-600w.jpg" width="450" height="300" alt="Image 72" onclick="openModal('images/72-1200w.jpg', 'Jul 7, 2024 17:16')" />
   </picture>
 
   <picture>
-    <source srcset="images/73-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/73-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/73-600w.jpg" width="450" height="300" alt="Image 73">
+    <source srcset="images/73-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/73-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/73-600w.jpg" width="450" height="300" alt="Image 73" onclick="openModal('images/73-1200w.jpg', 'Jul 7, 2024 15:02')" />
   </picture>
 
   <picture>
-    <source srcset="images/74-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/74-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/74-600w.jpg" width="450" height="300" alt="Image 74">
+    <source srcset="images/74-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/74-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/74-600w.jpg" width="450" height="300" alt="Image 74" onclick="openModal('images/74-1200w.jpg', 'Jul 8, 2024 14:43')" />
   </picture>
 
   <picture>
-    <source srcset="images/75-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/75-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/75-600w.jpg" width="450" height="300" alt="Image 75">
+    <source srcset="images/75-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/75-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/75-600w.jpg" width="450" height="300" alt="Image 75" onclick="openModal('images/75-1200w.jpg', 'Jul 7, 2024 16:09')" />
   </picture>
 
   <picture>
-    <source srcset="images/76-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/76-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/76-600w.jpg" width="450" height="300" alt="Image 76">
+    <source srcset="images/76-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/76-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/76-600w.jpg" width="450" height="300" alt="Image 76" onclick="openModal('images/76-1200w.jpg', 'Jul 7, 2024 10:17')" />
   </picture>
 
   <picture>
-    <source srcset="images/77-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/77-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/77-600w.jpg" width="450" height="300" alt="Image 77">
+    <source srcset="images/77-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/77-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/77-600w.jpg" width="450" height="300" alt="Image 77" onclick="openModal('images/77-1200w.jpg', 'Jul 6, 2024 14:35')" />
   </picture>
 
   <picture>
-    <source srcset="images/78-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/78-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/78-600w.jpg" width="450" height="300" alt="Image 78">
+    <source srcset="images/78-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/78-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/78-600w.jpg" width="450" height="300" alt="Image 78" onclick="openModal('images/78-1200w.jpg', 'Jul 7, 2024 11:36')" />
   </picture>
 
   <picture>
-    <source srcset="images/79-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/79-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/79-600w.jpg" width="450" height="300" alt="Image 79">
+    <source srcset="images/79-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/79-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/79-600w.jpg" width="450" height="300" alt="Image 79" onclick="openModal('images/79-1200w.jpg', 'Jul 7, 2024 17:18')" />
   </picture>
   <div>
     <div class="poem">
@@ -163,6 +202,14 @@
      </iframe>
    </div>
 
+   <div id="modalOverlay">
+    <div id="modal">
+      <img id="modalImage" />
+      <p id="imageDescription"></p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
    <script>
      function toggleSpotifyPlayer() {
        const player = document.getElementById("spotifyPlayer");
@@ -176,7 +223,17 @@
          iframe.src = "";
        }  
      }
-   </script>
-  </body>
-</html>
 
+     function openModal(src, desc) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageDescription').innerText = desc;
+
+      document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
