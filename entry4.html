@@ -59,6 +59,45 @@
         right: 20px;      
         display: none;
       }
+
+      #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #abf7ffb1; 
+      z-index: 999; 
+    }
+
+    #modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 0px; 
+      z-index: 1000;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+      #modalImage {
+        max-width: 100%; 
+         max-height: 70vh; 
+         object-fit: contain; 
+         display: block; 
+         margin: 0 auto; 
+         transition: none; 
+         transform: none; 
+         opacity: 1; 
+        }
+    
+         #imageDescription {
+      color: #211f19b3;
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
    </style>
   </head>
   <body>
@@ -67,55 +106,55 @@
    <picture>
     <source srcset="images/41-600.jpg" media="(max-width: 600px)">
     <source srcset="images/41-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/41-600.jpg" width="450" height="300" alt="Image 41">
+    <img src="images/41-600.jpg" width="450" height="300" alt="Image 41" onclick="openModal('images/41-1200.jpg', 'Nov 28, 2023 12:46')" />
   </picture>
 
   <picture>
     <source srcset="images/42-600.jpg" media="(max-width: 600px)">
     <source srcset="images/42-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/42-600.jpg" width="450" height="300" alt="Image 42">
+    <img src="images/42-600.jpg" width="450" height="300" alt="Image 42" onclick="openModal('images/42-1200.jpg', 'Nov 28, 2023 13:20')" />
   </picture>
 
   <picture>
     <source srcset="images/43-600.jpg" media="(max-width: 600px)">
     <source srcset="images/43-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/43-600.jpg" width="450" height="300" alt="Image 43">
+    <img src="images/43-600.jpg" width="450" height="300" alt="Image 43" onclick="openModal('images/43-1200.jpg', 'Nov 28, 2023 12:32')" />
   </picture>
 
   <picture>
     <source srcset="images/44-600.jpg" media="(max-width: 600px)">
     <source srcset="images/44-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/44-600.jpg" width="450" height="300" alt="Image 44">
+    <img src="images/44-600.jpg" width="450" height="300" alt="Image 44" onclick="openModal('images/44-1200.jpg', 'Nov 28, 2023 13:00')" />
   </picture>
 
   <picture>
     <source srcset="images/45-600.jpg" media="(max-width: 600px)">
     <source srcset="images/45-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/45-600.jpg" width="450" height="300" alt="Image 45">
+    <img src="images/45-600.jpg" width="450" height="300" alt="Image 45" onclick="openModal('images/45-1200.jpg', 'Nov 28, 2023 11:37')" />
   </picture>
 
   <picture>
     <source srcset="images/46-600.jpg" media="(max-width: 600px)">
     <source srcset="images/46-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/46-600.jpg" width="450" height="300" alt="Image 46">
+    <img src="images/46-600.jpg" width="450" height="300" alt="Image 46" onclick="openModal('images/46-1200.jpg', 'Nov 28, 2023 12:59')" />
   </picture>
 
   <picture>
     <source srcset="images/47-600.jpg" media="(max-width: 600px)">
     <source srcset="images/47-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/47-600.jpg" width="450" height="300" alt="Image 47">
+    <img src="images/47-600.jpg" width="450" height="300" alt="Image 47" onclick="openModal('images/47-1200.jpg', 'Dec 1, 2023 16:45')" />
   </picture>
 
   <picture>
     <source srcset="images/48-600.jpg" media="(max-width: 600px)">
     <source srcset="images/48-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/48-600.jpg" width="450" height="300" alt="Image 48">
+    <img src="images/48-600.jpg" width="450" height="300" alt="Image 48" onclick="openModal('images/48-1200.jpg', 'Dec 1, 2023 16:54')" />
   </picture>
 
   <picture>
     <source srcset="images/49-600.jpg" media="(max-width: 600px)">
     <source srcset="images/49-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/49-600.jpg" width="450" height="300" alt="Image 49">
+    <img src="images/49-600.jpg" width="450" height="300" alt="Image 49" onclick="openModal('images/49-1200.jpg', 'Dec 1, 2023 16:46')" />
   </picture>
   
    <div>
@@ -175,6 +214,14 @@
      </iframe>
    </div>
 
+   <div id="modalOverlay">
+    <div id="modal">
+      <img id="modalImage" />
+      <p id="imageDescription"></p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
    <script>
      function toggleSpotifyPlayer() {
        const player = document.getElementById("spotifyPlayer");
@@ -189,6 +236,17 @@
          iframe.src = "";
        }  
      }
-   </script>
- </body>
+
+     function openModal(src, desc) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageDescription').innerText = desc;
+
+      document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+  </script>
+</body>
 </html>
