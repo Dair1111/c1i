@@ -58,63 +58,102 @@
         right: 20px;      
         display: none;
       }
+
+      #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #abf7ffb1; 
+      z-index: 999; 
+    }
+
+    #modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 0px; 
+      z-index: 1000;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+      #modalImage {
+        max-width: 100%; 
+         max-height: 70vh; 
+         object-fit: contain; 
+         display: block; 
+         margin: 0 auto; 
+         transition: none; 
+         transform: none; 
+         opacity: 1; 
+        }
+    
+         #imageDescription {
+      color: #211f19b3;
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
    </style>
   </head>
   <body>
    <h1>Nalati Grassland</h1>
 
    <picture>
-    <source srcset="images/81-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/81-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/81-600w.jpg" width="450" height="300" alt="Image 81">
+    <source srcset="images/81-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/81-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/81-600w.jpg" width="450" height="300" alt="Image 81" onclick="openModal('images/81-1200w.jpg', 'Jul 9, 2024 12:07')" />
   </picture>
 
   <picture>
-    <source srcset="images/82-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/82-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/82-600w.jpg" width="450" height="300" alt="Image 82">
+    <source srcset="images/82-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/82-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/82-600w.jpg" width="450" height="300" alt="Image 82" onclick="openModal('images/82-1200w.jpg', 'Jul 8, 2024 12:32')" />
   </picture>
 
   <picture>
-    <source srcset="images/83-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/83-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/83-600W.jpg" width="450" height="300" alt="Image 83">
+    <source srcset="images/83-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/83-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/83-600w.jpg" width="450" height="300" alt="Image 83" onclick="openModal('images/83-1200w.jpg', 'Jul 8, 2024 18:01')" />
   </picture>
 
   <picture>
-    <source srcset="images/84-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/84-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/84-600W.jpg" width="450" height="300" alt="Image 84">
+    <source srcset="images/84-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/84-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/84-600w.jpg" width="450" height="300" alt="Image 84" onclick="openModal('images/84-1200w.jpg', 'Jul 9, 2024 10:46')" />
   </picture>
 
   <picture>
-    <source srcset="images/85-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/85-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/85-600W.jpg" width="450" height="300" alt="Image 85">
+    <source srcset="images/85-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/85-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/85-600w.jpg" width="450" height="300" alt="Image 85" onclick="openModal('images/85-1200w.jpg', 'Jul 9, 2024 10:53')" />
   </picture>
 
   <picture>
-    <source srcset="images/86-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/86-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/86-600W.jpg" width="450" height="300" alt="Image 86">
+    <source srcset="images/86-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/86-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/86-600w.jpg" width="450" height="300" alt="Image 86" onclick="openModal('images/86-1200w.jpg', 'Jul 8, 2024 09:56')" />
   </picture>
 
   <picture>
-    <source srcset="images/87-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/87-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/87-600W.jpg" width="450" height="300" alt="Image 87">
+    <source srcset="images/87-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/87-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/87-600w.jpg" width="450" height="300" alt="Image 87" onclick="openModal('images/87-1200w.jpg', 'Jul 8, 2024 09:48')" />
   </picture>
 
   <picture>
-    <source srcset="images/88-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/88-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/88-600W.jpg" width="450" height="300" alt="Image 88">
+    <source srcset="images/88-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/88-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/88-600w.jpg" width="450" height="300" alt="Image 88" onclick="openModal('images/88-1200w.jpg', 'Jul 7, 2024 17:25')" />
   </picture>
 
   <picture>
-    <source srcset="images/89-600.jpg" media="(max-width: 600px)">
-    <source srcset="images/89-1200.jpg" media="(max-width: 1200px)">
-    <img src="images/89-600W.jpg" width="450" height="300" alt="Image 89">
+    <source srcset="images/89-600w.jpg" media="(max-width: 600px)">
+    <source srcset="images/89-1200w.jpg" media="(max-width: 1200px)">
+    <img src="images/89-600w.jpg" width="450" height="300" alt="Image 89" onclick="openModal('images/89-1200w.jpg', 'Jul 8, 2024 10:00')" />
   </picture>
   <div>
     <div class="poem">
@@ -184,6 +223,14 @@ his news inhuman.<br>
      </iframe>
    </div>
 
+   <div id="modalOverlay">
+    <div id="modal">
+      <img id="modalImage" />
+      <p id="imageDescription"></p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
    <script>
      function toggleSpotifyPlayer() {
        const player = document.getElementById("spotifyPlayer");
@@ -197,6 +244,17 @@ his news inhuman.<br>
          iframe.src = "";
        }  
      }
-   </script>
-  </body>
+
+     function openModal(src, desc) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageDescription').innerText = desc;
+
+      document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+  </script>
+</body>
 </html>
